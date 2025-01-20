@@ -9,6 +9,7 @@ abstract class Controller {
 
     public function __construct() {
         $views = '../src/Views';
-        $this->blade = new Blade($views);
+        $cache = '../cache';
+        $this->blade = new Blade($views, $cache);
     }
 }
