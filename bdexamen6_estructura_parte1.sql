@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS examen6db
+  DEFAULT CHARACTER SET utf8mb4
+  DEFAULT COLLATE utf8mb4_unicode_ci;
+USE examen6db;
+
+CREATE TABLE IF NOT EXISTS companies (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  contact_info TEXT
+) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

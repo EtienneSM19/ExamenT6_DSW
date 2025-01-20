@@ -1,0 +1,16 @@
+{
+    "name": "etienne/examen6",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Etienne\\Examen6\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Etienne Santana Medina",
+            "email": "etiennemedina@gmail.com"
+        }
+    ],
+    "require": {}
+}

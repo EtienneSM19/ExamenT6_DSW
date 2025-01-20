@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Examen Tema 6: programación por capas</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Inicio</a>
+                </li>
+                <li>
+                    <a href="#">Empresas</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <form class="warning">
+            <legend>Modificar Empresa</legend>
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="contact_info">Correo de Contacto:</label>
+            <input type="email" id="contact_info" name="contact_info" required>
+            <div>
+                <button class="success">Guardar Cambios</button>
+                <button class="alert">Restaurar</button>
+                <button>Descartar</button>
+            </div>
+        </form>
+        <h2>Listado de empresas</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Correo de Contacto</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>TechCorp</td>
+                    <td>techcorp@example.com</td>
+                    <td>
+                        <button class="warning">Editar</button>
+                        <button class="alert">Borrar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>AgroSupply</td>
+                    <td>agrosupply@example.com</td>
+                    <td>
+                        <button class="warning">Editar</button>
+                        <button class="alert">Borrar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>MediHealth</td>
+                    <td>medihealth@example.com</td>
+                    <td>
+                        <button class="warning">Editar</button>
+                        <button class="alert">Borrar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>BuildIt</td>
+                    <td>buildit@example.com</td>
+                    <td>
+                        <button class="warning">Editar</button>
+                        <button class="alert">Borrar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>EduTools</td>
+                    <td>edutools@example.com</td>
+                    <td>
+                        <button class="warning">Editar</button>
+                        <button class="alert">Borrar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>Creado por: Nombre del alumno o alumna</p>
+    </footer>
+</body>
+
+</html>
