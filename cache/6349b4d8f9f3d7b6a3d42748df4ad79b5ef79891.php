@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>App - @yield('title')</title>
+  <title>App - <?php echo $__env->yieldContent('title'); ?></title>
   <link rel="stylesheet" href="/public/style.css">
 </head>
 <body>
   <nav>
     <ul>
-      @include('layouts.menu')
+      <?php echo $__env->make('layouts.menu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
     </ul>
   </nav>
   <h1>
-    @yield('title')
+    <?php echo $__env->yieldContent('title'); ?>
   </h1>
   <main>
-    @section('content')
+    <?php $__env->startSection('content'); ?>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ab officia dolor nemo dolores! Necessitatibus tempore, ea, dolores repellat dicta consectetur enim cum non id in, expedita sapiente unde repudiandae.</p>
-    @show
+    <?php echo $__env->yieldSection(); ?>
   </main>
-  @include('layouts.footer')
+  <?php echo $__env->make('layouts.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 </body>
 </html>
