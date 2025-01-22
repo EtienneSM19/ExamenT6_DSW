@@ -3,18 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>App - @yield('title')</title>
+  <title>Document</title>
 </head>
 <body>
   <h1>
-    @yield('title')
+    <?php echo $__env->yieldContent('title'); ?>
+    Hola mundo
   </h1>
   <main>
-    @section('content')
-    <p>
-      <h1>Hola mundo</h1>
-    </p>
-    @show
-  </main>
+    <?php $__env->startSection('content'); ?>
+    <?php echo $__env->yieldSection(); ?>
 </body>
 </html>

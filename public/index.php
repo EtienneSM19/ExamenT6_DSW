@@ -6,31 +6,27 @@ use Philo\Blade\Blade;
 
 require '../vendor/autoload.php';
 
-$views = '../src/Views';
+$views = '../src/views/';
 $cache = '../cache';
 $blade = new Blade($views, $cache);
 
 $router = new AltoRouter();
-$match = $router->match();
 
 $router->map('GET', '/', function() use ($blade){
   echo $blade->view()->make('index')->render();
 });
 
-if($match) {
-  $target = $match["target"];
-  if(is_string($target) && strpos($target, "#") !== false) {
-      list($controller, $action) = explode("#", $target);
-      $controller = "Controllers\\" . $controller;
-      $controller = new $controller;
-      $controller->$action($match["params"]);
+$match = $router->match();
+
+if (is_array($match)) {
+  if (is_callable($match['target'])) {
+    call_user_func_array($match['target'], $match['params']);
   } else {
-      if(is_callable($match["target"])) 
- call_user_func_array($match["target"], $match["params"]);
-      else require $match["target"];
+    $params = $match['params'];
+    $controller = new $match['target'][0];
+    $method = $match['target'][1];
+    $controller->$method($params);
   }
- } else {
-  echo "Ruta no válida";
-  die();
- }
- 
+} else {
+  echo $blade->view()->make('404')->render();
+}
